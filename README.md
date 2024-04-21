@@ -2,8 +2,7 @@
 
 > "Because you are too dumb to use assert." - Andrey 2024
 
-
-Lets be real, you don't use assert in C because you are dumb enough to never thinking in using signal to cancel the sigabort, but ok, I will make a beautiful library for you to use.
+Did you know that C has a macro function that execute a test for you? Of course not! If you know it you could be using it instead of downloading other test libraries.
 
 ## Dependencies
 
@@ -19,7 +18,7 @@ make
 ```
 
 Now move the `libcassert.a` to any project you want to use it.
-You can also combine it to another `.a` that you are using in your project by rename it or by:
+You can also combine it to another `.a` that you are using in your project by rename/copy it or by:
 
 ```sh
 ar -x libcassert.a

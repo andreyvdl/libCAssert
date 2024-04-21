@@ -9,7 +9,7 @@ Did you know that C has a macro function that checks a test for you? Of course n
 * C compiler (gcc, clang, cc, etc);
 * A brain (optional);
 
-## How to use
+## Compile it
 
 ```sh
 git clone https://github.com/andreyvdl/libCAssert
@@ -24,3 +24,7 @@ You can also combine it to another `.a` that you are using in your project by re
 ar -x libcassert.a
 mv *.o /path/where/you/want
 ```
+
+## THE FUCKING MANUAL
+
+

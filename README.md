@@ -2,7 +2,7 @@
 
 > "Because you are too dumb to use assert." - Andrey 2024
 
-Did you know that C has a macro function that execute a test for you? Of course not! If you know it you could be using it instead of downloading other test libraries.
+Did you know that C has a macro function that checks a test for you? Of course not! If you know it you could be using it instead of downloading other test libraries.
 
 ## Dependencies
 

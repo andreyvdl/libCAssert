@@ -25,8 +25,8 @@ int	main(void)
 	init_instance_default(&instance2);
 	quick_test_ptr(instance.info, strchr("Hello World", 'H'), NULL);
 	init_instance_default(instance3);
-	// instance3[1] = init_instance_default(NULL);
-	// instance3[2] = init_instance_default(NULL);
+	instance3[1] = init_instance_default(NULL);
+	instance3[2] = init_instance_default(NULL);
 	test_int(instance3, r, e, 3);
 	r[0] = 3;
 	r[2] = 1;

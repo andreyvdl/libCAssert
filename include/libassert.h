@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:05 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/21 23:59:54 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:51:57 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,36 +45,25 @@ typedef enum e_comp
 	GREATER_EQUAL,
 }	t_comp;
 
-typedef struct s_title
+typedef enum e_type
 {
-	const char	*text;
-	const char	*color;
-}	t_title;
+	POINTER,
+	INT,
+	DOUBLE,
+}	t_type;
 
-typedef struct s_desc
+typedef struct s_text
 {
 	const char	*text;
 	const char	*color;
-}	t_desc;
-
-typedef struct s_ok
-{
-	const char	*text;
-	const char	*color;
-}	t_ok;
-
-typedef struct s_ko
-{
-	const char	*text;
-	const char	*color;
-}	t_ko;
+}	t_text;
 
 typedef struct s_info
 {
-	t_title	title_info;
-	t_desc	description_info;
-	t_ok	ok_info;
-	t_ko	ko_info;
+	t_text	title;
+	t_text	desc;
+	t_text	ok;
+	t_text	ko;
 }	t_info;
 
 typedef struct s_inst
@@ -94,21 +83,37 @@ int		eq_double(double a, double b);
 int		gt_double(double a, double b);
 int		ge_double(double a, double b);
 void	print_end_group(size_t sz, size_t err);
-void	print_title_n_desc(t_title title, t_desc description);
-void	print_ko(t_ko ko);
-void	print_ok(t_ok ok);
-void	quick_test_ptr(t_info q_info, void *result, void *expect);
-void	quick_test_double(t_info q_info, \
-					t_comp const cmp, \
-					double result, \
-					double expect);
-void	quick_test_int(t_info q_info, \
-					t_comp const cmp, \
-					int64_t result, \
-					int64_t expect);
-void	tests_ptr(t_inst *inst, void **result, void **expect, size_t n);
-void	test_int(t_inst *inst, int64_t *results, int64_t *expects, size_t n);
-void	test_double(t_inst *inst, double *results, double *expects, size_t n);
+void	print_title_n_desc(t_text title, t_text description);
+void	print_ko(t_text ko);
+void	print_ok(t_text ok);
+
+/*
+ * this function compare two pointers;
+ * it can be used to check if a builder is returning NULL;
+ * if a getter is really returning a pointer;
+ * or if a function is finding the right address;
+ * the same is true for the not quick version;
+*/
+void	quick_test_ptr(t_inst q_inst, void *result, void *expect);
+
+/*
+ * this function compare two double numbers;
+ * because is a double comparasion if the value result in -inff or +inff
+ * it will not be detected;
+ * the same is true for the not quick version;
+*/
+void	quick_test_double(t_inst q_inst, double result, double expect);
+
+/*
+ * this function compare two long/long long numbers;
+ * the reason to use long/long long is to easily detect overflows;
+ * the same is true for the not quick version;
+*/
+void	quick_test_int(t_inst q_inst, int64_t result, int64_t expect);
+void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n);
+void	test_int(t_inst *inst, int64_t *res, int64_t *exp, size_t n);
+void	test_double(t_inst *inst, double *res, double *exp, size_t n);
 t_inst	init_instance_default(t_inst *self);
+t_inst	set_instance(t_inst *self, t_text infos[4], t_comp comp);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 17:44:11 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 00:19:01 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:48:10 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	print_end_group(size_t sz, size_t err)
 		COLOR_NO, COLOR_RED, err, COLOR_NO);
 }
 
-void	print_title_n_desc(t_title title, t_desc description)
+void	print_title_n_desc(t_text title, t_text description)
 {
-	printf("%s%s\033[0m\n", title.color, title.text);
-	printf("%s%s\033[0m\n", description.color, description.text);
+	printf("%s%s%s\n", title.color, title.text, COLOR_NO);
+	printf("%s%s%s\n", description.color, description.text, COLOR_NO);
 }
 
-void	print_ko(t_ko ko)
+void	print_ko(t_text ko)
 {
-	printf("%s%s\033[0m\n", ko.color, ko.text);
+	printf("%s%s%s\n", ko.color, ko.text, COLOR_NO);
 }
 
-void	print_ok(t_ok ok)
+void	print_ok(t_text ok)
 {
-	printf("%s%s\033[0m\n", ok.color, ok.text);
+	printf("%s%s%s\n", ok.color, ok.text, COLOR_NO);
 }

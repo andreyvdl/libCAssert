@@ -45,6 +45,6 @@ Quick tests will always print the title and description of their instance.
 
 There are 2 structs and 1 enum:   
 
-`t_comp` an enum that represents less-equal than (<=), less than (<), equal (==), greater than (>) and greater-equal than (>=), (different (!=) was not added because is just the oposite of equal).   
-`t_text` a struct that contains a text field and a color field (macros for the colors are on libassert.h, if you want to use your own colors the program expects an ANSI pattern).   
-`t_inst` the main struct for instances, it takes 4 t_texts for title, description, ok message and ko messages, and a t_comp with the comparision type of that instance.   
+* `t_comp` an enum that represents less-equal than (<=), less than (<), equal (==), greater than (>) and greater-equal than (>=), (different (!=) was not added because is just the oposite of equal).   
+* `t_text` a struct that contains a text field and a color field (macros for the colors are on libassert.h, if you want to use your own colors the program expects an ANSI pattern).   
+* `t_inst` the main struct for instances, it takes 4 t_texts for title, description, ok message and ko messages, and a t_comp with the comparision type of that instance.   

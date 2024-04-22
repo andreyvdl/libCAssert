@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:05 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/21 22:14:32 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:59:54 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ typedef struct s_inst
 	t_comp	comp_type;
 }	t_inst;
 
-void	handle_sig_abort(int sig);
-int		*get_ko_count(const int reset);
 int		le_int(int64_t a, int64_t b);
 int		lt_int(int64_t a, int64_t b);
 int		eq_int(int64_t a, int64_t b);
@@ -95,7 +93,8 @@ int		lt_double(double a, double b);
 int		eq_double(double a, double b);
 int		gt_double(double a, double b);
 int		ge_double(double a, double b);
-void	print_title_n_description(t_title title, t_desc description);
+void	print_end_group(size_t sz, size_t err);
+void	print_title_n_desc(t_title title, t_desc description);
 void	print_ko(t_ko ko);
 void	print_ok(t_ok ok);
 void	quick_test_ptr(t_info q_info, void *result, void *expect);
@@ -107,6 +106,9 @@ void	quick_test_int(t_info q_info, \
 					t_comp const cmp, \
 					int64_t result, \
 					int64_t expect);
+void	tests_ptr(t_inst *inst, void **result, void **expect, size_t n);
+void	test_int(t_inst *inst, int64_t *results, int64_t *expects, size_t n);
+void	test_double(t_inst *inst, double *results, double *expects, size_t n);
 t_inst	init_instance_default(t_inst *self);
 
 #endif

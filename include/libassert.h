@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:05 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 14:51:57 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:39:07 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,30 +45,18 @@ typedef enum e_comp
 	GREATER_EQUAL,
 }	t_comp;
 
-typedef enum e_type
-{
-	POINTER,
-	INT,
-	DOUBLE,
-}	t_type;
-
 typedef struct s_text
 {
 	const char	*text;
 	const char	*color;
 }	t_text;
 
-typedef struct s_info
+typedef struct s_inst
 {
 	t_text	title;
 	t_text	desc;
 	t_text	ok;
 	t_text	ko;
-}	t_info;
-
-typedef struct s_inst
-{
-	t_info	info;
 	t_comp	comp_type;
 }	t_inst;
 

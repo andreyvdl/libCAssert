@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:02:19 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 14:51:24 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:40:39 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n)
 	size_t	i;
 	size_t	errors;
 
-	print_title_n_desc(inst->info.title, inst->info.desc);
+	print_title_n_desc(inst->title, inst->desc);
 	printf("==========================================\n");
 	i = -1;
 	errors = 0;
@@ -25,10 +25,10 @@ void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n)
 	{
 		printf("%p == %p -> ", res[i], exp[i]);
 		if (res[i] == exp[i])
-			print_ok(inst[i].info.ok);
+			print_ok(inst[i].ok);
 		else
 		{
-			print_ko(inst[i].info.ko);
+			print_ko(inst[i].ko);
 			++errors;
 		}
 	}
@@ -43,7 +43,7 @@ void	test_int(t_inst *inst, int64_t *res, int64_t *exp, size_t n)
 	size_t		i;
 	size_t		errors;
 
-	print_title_n_desc(inst->info.title, inst->info.desc);
+	print_title_n_desc(inst->title, inst->desc);
 	printf("==========================================\n");
 	i = -1;
 	errors = 0;
@@ -51,10 +51,10 @@ void	test_int(t_inst *inst, int64_t *res, int64_t *exp, size_t n)
 	{
 		printf("%ld %s %ld -> ", res[i], comp[inst[i].comp_type], exp[i]);
 		if (map[inst[i].comp_type](res[i], exp[i]))
-			print_ok(inst->info.ok);
+			print_ok(inst[i].ok);
 		else
 		{
-			print_ko(inst->info.ko);
+			print_ko(inst[i].ko);
 			++errors;
 		}
 	}
@@ -70,7 +70,7 @@ void	test_double(t_inst *inst, double *res, double *exp, size_t n)
 	size_t		i;
 	size_t		errors;
 
-	print_title_n_desc(inst->info.title, inst->info.desc);
+	print_title_n_desc(inst->title, inst->desc);
 	printf("==========================================\n");
 	i = -1;
 	errors = 0;
@@ -78,10 +78,10 @@ void	test_double(t_inst *inst, double *res, double *exp, size_t n)
 	{
 		printf("%lf %s %lf -> ", res[i], comp[inst[i].comp_type], exp[i]);
 		if (map[inst[i].comp_type](res[i], exp[i]))
-			print_ok(inst[i].info.ok);
+			print_ok(inst[i].ok);
 		else
 		{
-			print_ko(inst[i].info.ko);
+			print_ko(inst[i].ko);
 			++errors;
 		}
 	}

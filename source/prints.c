@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libassert.c                                        :+:      :+:    :+:   */
+/*   prints.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 17:00:15 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/21 22:08:37 by adantas-         ###   ########.fr       */
+/*   Created: 2024/04/21 17:44:11 by adantas-          #+#    #+#             */
+/*   Updated: 2024/04/21 17:48:53 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libassert.h"
 
-t_inst	init_instance_default(t_inst *self)
+void	print_title_n_description(t_title title, t_desc description)
 {
-	static t_inst	dflt = {\
-		{\
-			{DEFAULT_T_TEXT, DEFAULT_T_COLOR}, \
-			{DEFAULT_D_TEXT, DEFAULT_D_COLOR}, \
-			{DEFAULT_O_TEXT, DEFAULT_O_COLOR}, \
-			{DEFAULT_K_TEXT, DEFAULT_K_COLOR} \
-		}, \
-		EQUAL \
-	};
+	printf("%s%s\033[0m\n", title.color, title.text);
+	printf("%s%s\033[0m\n", description.color, description.text);
+}
 
-	if (self == NULL)
-		return (dflt);
-	*self = dflt;
-	return (*self);
+void	print_ko(t_ko ko)
+{
+	printf("%s%s\033[0m\n", ko.color, ko.text);
+}
+
+void	print_ok(t_ok ok)
+{
+	printf("%s%s\033[0m\n", ok.color, ok.text);
 }

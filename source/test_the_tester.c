@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libassert.c                                        :+:      :+:    :+:   */
+/*   test_the_tester.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 17:00:15 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/21 22:08:37 by adantas-         ###   ########.fr       */
+/*   Created: 2024/04/21 10:05:52 by adantas-          #+#    #+#             */
+/*   Updated: 2024/04/21 22:09:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libassert.h"
 
-t_inst	init_instance_default(t_inst *self)
+int	main(void)
 {
-	static t_inst	dflt = {\
-		{\
-			{DEFAULT_T_TEXT, DEFAULT_T_COLOR}, \
-			{DEFAULT_D_TEXT, DEFAULT_D_COLOR}, \
-			{DEFAULT_O_TEXT, DEFAULT_O_COLOR}, \
-			{DEFAULT_K_TEXT, DEFAULT_K_COLOR} \
-		}, \
-		EQUAL \
-	};
+	t_inst		instance;
+	t_inst		instance2;
+	const char	*str = "Hello World";
 
-	if (self == NULL)
-		return (dflt);
-	*self = dflt;
-	return (*self);
+	instance = init_instance_default(NULL);
+	quick_test_ptr(instance.info, strchr(str, '!'), NULL);
+	init_instance_default(&instance2);
+	quick_test_ptr(instance.info, strchr(str, ' '), NULL);
 }

@@ -1,13 +1,11 @@
 # libCAssert
 
-> "Because you are too dumb to use assert." - Andrey 2024
-
-Did you know that C has a macro function that checks a test for you? Of course not! If you know it you could be using it instead of downloading other test libraries.
+Did you know that C has a macro function that checks a test for you? Well it doesn't work very well because if something wents wrong it will abort the program, so i decided to make this library.
 
 ## Dependencies
 
 * C compiler (gcc, clang, cc, etc);
-* A brain (optional);
+* 64 bits system (because all tests with int will be using int64_t)
 
 ## Compile it
 

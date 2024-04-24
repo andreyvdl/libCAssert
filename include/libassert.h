@@ -98,7 +98,7 @@ void	quick_test_double(t_inst q_inst, double result, double expect);
  * the same is true for the not quick version;
 */
 void	quick_test_int(t_inst q_inst, int64_t result, int64_t expect);
-void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n);
+void	test_ptr(t_inst *inst, void **res, void **exp, size_t n);
 void	test_int(t_inst *inst, int64_t *res, int64_t *exp, size_t n);
 void	test_double(t_inst *inst, double *res, double *exp, size_t n);
 t_inst	init_instance_default(t_inst *self);

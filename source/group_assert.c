@@ -12,7 +12,7 @@
 
 #include "../include/libassert.h"
 
-void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n)
+void	test_ptr(t_inst *inst, void **res, void **exp, size_t n)
 {
 	size_t	i;
 	size_t	errors;

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:05 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 17:39:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:57:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef enum e_comp
 	EQUAL,
 	GREATER,
 	GREATER_EQUAL,
+	DIFFERENT,
 }	t_comp;
 
 typedef struct s_text
@@ -65,11 +66,19 @@ int		lt_int(int64_t a, int64_t b);
 int		eq_int(int64_t a, int64_t b);
 int		gt_int(int64_t a, int64_t b);
 int		ge_int(int64_t a, int64_t b);
+int		df_int(int64_t a, int64_t b);
 int		le_double(double a, double b);
 int		lt_double(double a, double b);
 int		eq_double(double a, double b);
 int		gt_double(double a, double b);
 int		ge_double(double a, double b);
+int		df_double(double a, double b);
+int		le_void(void *a, void *b);
+int		lt_void(void *a, void *b);
+int		eq_void(void *a, void *b);
+int		gt_void(void *a, void *b);
+int		ge_void(void *a, void *b);
+int		df_void(void *a, void *b);
 void	print_end_group(size_t sz, size_t err);
 void	print_title_n_desc(t_text title, t_text description);
 void	print_ko(t_text ko);

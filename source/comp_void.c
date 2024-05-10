@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comp_double.c                                      :+:      :+:    :+:   */
+/*   comp_void.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/21 16:02:38 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/09 23:49:04 by adantas-         ###   ########.fr       */
+/*   Created: 2024/05/09 23:49:19 by adantas-          #+#    #+#             */
+/*   Updated: 2024/05/09 23:49:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libassert.h"
 
-int	le_double(double a, double b)
+int	le_void(void *a, void *b)
 {
 	return (a <= b);
 }
 
-int	lt_double(double a, double b)
+int	lt_void(void *a, void *b)
 {
 	return (a < b);
 }
 
-int	eq_double(double a, double b)
+int	eq_void(void *a, void *b)
 {
 	return (a == b);
 }
 
-int	gt_double(double a, double b)
+int	gt_void(void *a, void *b)
 {
 	return (a > b);
 }
 
-int	ge_double(double a, double b)
+int	ge_void(void *a, void *b)
 {
 	return (a >= b);
 }
 
-int	df_double(double a, double b)
+int	df_void(void *a, void *b)
 {
 	return (a != b);
 }

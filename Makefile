@@ -6,13 +6,13 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 16:57:03 by adantas-          #+#    #+#              #
-#    Updated: 2024/04/22 17:36:47 by adantas-         ###   ########.fr        #
+#    Updated: 2024/05/09 23:58:28 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libcassert.a
 SRCS=$(addprefix source/, comp_double.c comp_int.c group_assert.c \
-	libassert.c prints.c quick_assert.c)
+	libassert.c prints.c quick_assert.c comp_void.c)
 INCLUDE=include/libassert.h
 OBJS=$(patsubst source/%, objects/%, $(SRCS:.c=.o))
 CFLAGS=-Wall -Wextra -Werror -std=c99 -Iinclude
